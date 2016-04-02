@@ -1,4 +1,4 @@
-<krpano version="1.18" title="Virtual Tour" onstart="startup();">
+<krpano version="1.18" title="Sence name" onstart="startup();">
 
 	<include url="skin/vtourskin.xml" />
 
@@ -116,10 +116,34 @@
 	
 	
 	
+	<!-- left sidebar -->
+	<include url="thumbbar.xml" />
+	<action name="leftSidebar">
+		<!--
+			syntax: 
+				create_thumbbar(numberofimages, align, orientation, x,y, width,height, border); 
+				
+			numberofimages ... number of images
+			align          ... position of the imagebar (lefttop,left,leftright,top,center,bottom,righttop,right,bottom)
+			orientation    ... orientation of the imagebar (h or v)
+			x,y            ... position offsets
+			width,height   ... thumbnail imagesize
+			border         ... border around images
+		-->
+		create_thumbbar(6, left, v, 10,10, 90,60, 6);
+
+		thumbbar_addimage('leftSidebarImg/IMG_1683.jpg');
+		thumbbar_addimage('leftSidebarImg/IMG_1685.jpg');
+		thumbbar_addimage('leftSidebarImg/IMG_1688.jpg');
+		thumbbar_addimage('leftSidebarImg/IMG_1696.jpg');
+		thumbbar_addimage('leftSidebarImg/IMG_1702.jpg');
+		thumbbar_addimage('leftSidebarImg/IMG_1704.jpg');
+	</action>
+	
 	
 
 	
-	<scene name="scene_20160305-184847" title="20160305-184847" onstart="updateradar();" thumburl="panos/20160305-184847.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene_20160305-184847" title="Office" onstart="updateradar();leftSidebar();" thumburl="panos/20160305-184847.tiles/thumb.jpg" lat="" lng="" heading="">
 		<action name="updateradar">
 			set(layer[activespot].parent, spot1);
 			set(layer[radar].parent, spot1);
@@ -142,7 +166,7 @@
 
 	</scene>
 
-	<scene name="scene_20160323-234837" title="20160323-234837" onstart="updateradar();" thumburl="panos/20160323-234837.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene_20160323-234837" title="Warehouse" onstart="updateradar();leftSidebar();" thumburl="panos/20160323-234837.tiles/thumb.jpg" lat="" lng="" heading="">
 		<action name="updateradar">
 			set(layer[activespot].parent, spot2);
 			set(layer[radar].parent, spot2);

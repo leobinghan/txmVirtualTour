@@ -504,6 +504,10 @@
 			tween(layer[skin_buttonglow].alpha, 0.0, 0.1, default, set(layer[skin_buttonglow].parent, null); set(layer[skin_buttonglow].visible, false); );
 		  );
 	</action>
+	
+	<action name="hide_vtourskin_all" autorun="onstart">
+		skin_hideskin();
+	</action>
 
 	<action name="skin_hideskin">
 		if(layer[skin_map].state != 'closed', skin_showmap(false); wait(0.4); );
